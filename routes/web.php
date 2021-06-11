@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ClubController;
+use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +21,12 @@ Route::group(['middleware' => 'language'], function () {
     Route::get('/', function () {
         return view('welcome');
     });
+
+    Route::resources([
+        'clubs' => ClubController::class,
+        'players' => PlayerController::class,
+        'teams' => TeamController::class,
+    ]);
 
     Route::get('/dashboard', function () {
         return view('dashboard');

@@ -1,15 +1,13 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Teams') }}
-        </h2>
-    </x-slot>
+@extends('team.layout')
 
+@section('this-element')
     <p>
         <a href="{{ route('teams.index') }}"><x-icon.back class="inline"/></a>
         Team: {{ $team->name }}
     </p>
+@endsection
 
+@section('content')
     <form method="post" action="{{ route('teams.update', ['team' => $team]) }}">
         @csrf
         <input name="_method" type="hidden" value="PUT">
@@ -44,4 +42,4 @@
             <button type="submit">Delete</button>
         </form>
     @endcan
-</x-app-layout>
+@endsection

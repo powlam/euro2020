@@ -1,32 +1,28 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Players') }}
-        </h2>
-    </x-slot>
+@extends('player.layout')
 
+@section('content')
     @can('create')
         <p>
             <a href="{{ route('players.create') }}"><x-icon.new/></a>
         </p>
     @endcan
 
-    <table>
+    <table class="container mx-auto my-3 table-fixed text-center">
         <thead>
             <tr>
-                <th>name</th>
-                <th>birth_year</th>
-                <th>team</th>
+                <th class='text-left'>name</th>
+                <th class='w-16'>birth_year</th>
+                <th class='w-32'>team</th>
                 <th>sheet_name</th>
-                <th>sheet_number</th>
+                <th class='w-16'>sheet_number</th>
                 <th>club</th>
-                <th class='actions'></th>
+                <th class='actions w-16'></th>
             </tr>
         </thead>
         <tbody>
         @foreach ($players as $player)
-            <tr>
-                <td>{{ $player->name }}</td>
+            <tr class="hover:bg-gray-100">
+                <td class='text-left'>{{ $player->name }}</td>
                 <td>{{ $player->birth_year }}</td>
                 <td>{{ $player->team->country }}</td>
                 <td>{{ $player->sheet_name }}</td>
@@ -46,4 +42,5 @@
         @endforeach
         </tbody>
     </table>
-</x-app-layout>
+    {{ $players->links() }}
+@endsection

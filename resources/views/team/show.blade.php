@@ -1,15 +1,13 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Teams') }}
-        </h2>
-    </x-slot>
+@extends('team.layout')
 
+@section('this-element')
     <p>
         <a href="{{ route('teams.index') }}"><x-icon.back class="inline"/></a>
         Team: {{ $team->name }}
     </p>
+@endsection
 
+@section('content')
     <label>
         name
         <input type="text" name="name" value="{{ $team->name }}" readonly/>
@@ -26,9 +24,9 @@
     @can('edit')
         <a href="{{ route('teams.edit', ['team' => $team]) }}"><x-icon.edit class="inline"/></a>
     @endcan
+@endsection
 
-    <hr>
-
+@section('related-elements')
     <h3>Players</h3>
     <ul>
         @foreach ($team->players as $player)
@@ -37,4 +35,4 @@
             </li>
         @endforeach
     </ul>
-</x-app-layout>
+@endsection

@@ -1,15 +1,13 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Players') }}
-        </h2>
-    </x-slot>
+@extends('player.layout')
 
+@section('this-element')
     <p>
         <a href="{{ route('players.index') }}"><x-icon.back class="inline"/></a>
         NEW Player
     </p>
+@endsection
 
+@section('content')
     <form method="post" action="{{ route('players.store') }}">
         @csrf
         <label>
@@ -48,4 +46,4 @@
         </label>
         <button type="submit">Save</button>
     </form>
-</x-app-layout>
+@endsection

@@ -9,8 +9,12 @@ class Team extends Model
 {
     use HasFactory;
 
-    /** var char[] $groups */
-    public static $groups = [ 'A', 'B', 'C', 'D', 'E', 'F' ];
+    /**
+     * The number of models to return for pagination.
+     *
+     * @var int
+     */
+    protected $perPage = 12;
 
     /**
      * The attributes that are mass assignable.
@@ -22,6 +26,11 @@ class Team extends Model
         'country',
         'group',
     ];
+
+    /** var char[] $groups */
+    public static $groups = [ 'A', 'B', 'C', 'D', 'E', 'F' ];
+
+    /** Relationships */
 
     /**
      * The players that belong to this team.

@@ -25,8 +25,8 @@
                 <td>{{ $team->country }}</td>
                 <td>{{ $team->group }}</td>
                 <td class='actions'>
-                    <a href="{{ route('teams.show', ['team' => $team]) }}"><x-icon.show/></a>
-                    <a href="{{ route('teams.edit', ['team' => $team]) }}"><x-icon.edit/></a>
+                    <a href="{{ route('teams.show', ['team' => $team]) }}"><x-icon.show class="inline"/></a>
+                    <a href="{{ route('teams.edit', ['team' => $team]) }}"><x-icon.edit class="inline"/></a>
                 </td>
             </tr>
         @endforeach

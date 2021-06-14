@@ -6,7 +6,7 @@
     </x-slot>
 
     <p>
-        <a href="{{ route('players.index') }}"><x-icon.back/></a>
+        <a href="{{ route('players.index') }}"><x-icon.back class="inline"/></a>
         Player: {{ $player->name }}
     </p>
 
@@ -35,5 +35,5 @@
         <input type="text" name="club" value="@if ($player->club) {{ $player->club->name }} ({{ $player->club->country }}) @endif" readonly/>
     </label>
 
-    <a href="{{ route('players.edit', ['player' => $player]) }}"><x-icon.edit/></a>
+    <a href="{{ route('players.edit', ['player' => $player]) }}"><x-icon.edit class="inline"/></a>
 </x-app-layout>

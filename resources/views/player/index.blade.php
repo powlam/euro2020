@@ -35,8 +35,8 @@
                     @endif
                 </td>
                 <td class='actions'>
-                    <a href="{{ route('players.show', ['player' => $player]) }}"><x-icon.show/></a>
-                    <a href="{{ route('players.edit', ['player' => $player]) }}"><x-icon.edit/></a>
+                    <a href="{{ route('players.show', ['player' => $player]) }}"><x-icon.show class="inline"/></a>
+                    <a href="{{ route('players.edit', ['player' => $player]) }}"><x-icon.edit class="inline"/></a>
                 </td>
             </tr>
         @endforeach

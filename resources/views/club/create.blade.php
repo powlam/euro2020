@@ -6,7 +6,7 @@
     </x-slot>
 
     <p>
-        <a href="{{ route('clubs.index') }}"><x-icon.back/></a>
+        <a href="{{ route('clubs.index') }}"><x-icon.back class="inline"/></a>
         NEW Club
     </p>
 

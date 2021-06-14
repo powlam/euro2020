@@ -6,7 +6,7 @@
     </x-slot>
 
     <p>
-        <a href="{{ route('players.index') }}"><x-icon.back/></a>
+        <a href="{{ route('players.index') }}"><x-icon.back class="inline"/></a>
         NEW Player
     </p>
 

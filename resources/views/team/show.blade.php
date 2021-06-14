@@ -6,7 +6,7 @@
     </x-slot>
 
     <p>
-        <a href="{{ route('teams.index') }}"><x-icon.back/></a>
+        <a href="{{ route('teams.index') }}"><x-icon.back class="inline"/></a>
         Team: {{ $team->name }}
     </p>
 
@@ -23,7 +23,7 @@
         <input type="text" name="group" value="{{ $team->group }}" readonly/>
     </label>
 
-    <a href="{{ route('teams.edit', ['team' => $team]) }}"><x-icon.edit/></a>
+    <a href="{{ route('teams.edit', ['team' => $team]) }}"><x-icon.edit class="inline"/></a>
 
     <hr>
 
@@ -31,7 +31,7 @@
     <ul>
         @foreach ($team->players as $player)
             <li>
-                {{ $player->team->country }} {{ $player->sheet_number }} {{ $player->name }} <a href="{{ route('players.show', ['player' => $player]) }}"><x-icon.show/></a>
+                {{ $player->team->country }} {{ $player->sheet_number }} {{ $player->name }} <a href="{{ route('players.show', ['player' => $player]) }}"><x-icon.show class="inline"/></a>
             </li>
         @endforeach
     </ul>

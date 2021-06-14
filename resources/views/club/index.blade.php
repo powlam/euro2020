@@ -25,8 +25,8 @@
                 <td>{{ $club->country }}</td>
                 <td>{{ $club->league }}</td>
                 <td class='actions'>
-                    <a href="{{ route('clubs.show', ['club' => $club]) }}"><x-icon.show/></a>
-                    <a href="{{ route('clubs.edit', ['club' => $club]) }}"><x-icon.edit/></a>
+                    <a href="{{ route('clubs.show', ['club' => $club]) }}"><x-icon.show class="inline"/></a>
+                    <a href="{{ route('clubs.edit', ['club' => $club]) }}"><x-icon.edit class="inline"/></a>
                 </td>
             </tr>
         @endforeach

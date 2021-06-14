@@ -6,7 +6,7 @@
     </x-slot>
 
     <p>
-        <a href="{{ route('players.show', ['player' => $player]) }}"><x-icon.back/></a>
+        <a href="{{ route('players.show', ['player' => $player]) }}"><x-icon.back class="inline"/></a>
         Player: {{ $player->name }}
     </p>
 

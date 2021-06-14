@@ -6,7 +6,7 @@
     </x-slot>
 
     <p>
-        <a href="{{ route('clubs.show', ['club' => $club]) }}"><x-icon.back class="inline"/></a>
+        <a href="{{ route('clubs.index') }}"><x-icon.back class="inline"/></a>
         Club: {{ $club->name }}
     </p>
 
@@ -26,6 +26,8 @@
             league
             <input type="text" name="league" value="{{ $club->league }}"/>
         </label>
+
+        <a href="{{ route('clubs.show', ['club' => $club]) }}">Cancel</a>
         <button type="submit">Save</button>
     </form>
 

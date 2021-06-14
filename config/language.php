@@ -114,7 +114,7 @@ return [
     |
     */
 
-    'flags'         => ['width' => '22px', 'ul_class' => '', 'li_class' => '', 'img_class' => ''],
+    'flags'         => ['width' => '22px', 'ul_class' => '', 'li_class' => '', 'img_class' => 'inline'],
 
     /*
     |--------------------------------------------------------------------------

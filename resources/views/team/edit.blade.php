@@ -6,7 +6,7 @@
     </x-slot>
 
     <p>
-        <a href="{{ route('teams.show', ['team' => $team]) }}"><x-icon.back class="inline"/></a>
+        <a href="{{ route('teams.index') }}"><x-icon.back class="inline"/></a>
         Team: {{ $team->name }}
     </p>
 
@@ -31,6 +31,8 @@
                 @endforeach
             </select>
         </label>
+
+        <a href="{{ route('teams.show', ['team' => $team]) }}">Cancel</a>
         <button type="submit">Save</button>
     </form>
 

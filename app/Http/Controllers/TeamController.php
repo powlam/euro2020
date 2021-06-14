@@ -25,6 +25,8 @@ class TeamController extends Controller
      */
     public function create()
     {
+        $this->authorize('create');
+
         return view('team.create');
     }
 
@@ -36,6 +38,8 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create');
+
         Team::create([
             'name' => $request->name,
             'country' => $request->country,
@@ -64,6 +68,8 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
+        $this->authorize('edit');
+
         return view('team.edit', compact('team'));
     }
 
@@ -76,6 +82,8 @@ class TeamController extends Controller
      */
     public function update(Request $request, Team $team)
     {
+        $this->authorize('edit');
+
         $team->update([
             'name' => $request->name,
             'country' => $request->country,
@@ -93,6 +101,8 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
+        $this->authorize('delete');
+
         $team->delete();
 
         return redirect()->route('teams.index');

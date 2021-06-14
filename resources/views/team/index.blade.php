@@ -5,9 +5,11 @@
         </h2>
     </x-slot>
 
-    <p>
-        <a href="{{ route('teams.create') }}"><x-icon.new/></a>
-    </p>
+    @can('create')
+        <p>
+            <a href="{{ route('teams.create') }}"><x-icon.new/></a>
+        </p>
+    @endcan
 
     <table>
         <thead>
@@ -26,7 +28,9 @@
                 <td>{{ $team->group }}</td>
                 <td class='actions'>
                     <a href="{{ route('teams.show', ['team' => $team]) }}"><x-icon.show class="inline"/></a>
-                    <a href="{{ route('teams.edit', ['team' => $team]) }}"><x-icon.edit class="inline"/></a>
+                    @can('edit')
+                        <a href="{{ route('teams.edit', ['team' => $team]) }}"><x-icon.edit class="inline"/></a>
+                    @endcan
                 </td>
             </tr>
         @endforeach

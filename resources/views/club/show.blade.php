@@ -23,7 +23,9 @@
         <input type="text" name="league" value="{{ $club->league }}" readonly/>
     </label>
 
-    <a href="{{ route('clubs.edit', ['club' => $club]) }}"><x-icon.edit class="inline"/></a>
+    @can('edit')
+        <a href="{{ route('clubs.edit', ['club' => $club]) }}"><x-icon.edit class="inline"/></a>
+    @endcan
 
     <hr>
 

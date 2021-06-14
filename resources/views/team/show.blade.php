@@ -23,7 +23,9 @@
         <input type="text" name="group" value="{{ $team->group }}" readonly/>
     </label>
 
-    <a href="{{ route('teams.edit', ['team' => $team]) }}"><x-icon.edit class="inline"/></a>
+    @can('edit')
+        <a href="{{ route('teams.edit', ['team' => $team]) }}"><x-icon.edit class="inline"/></a>
+    @endcan
 
     <hr>
 

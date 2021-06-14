@@ -27,6 +27,8 @@ class PlayerController extends Controller
      */
     public function create()
     {
+        $this->authorize('create');
+
         $clubs = Club::all();
         $teams = Team::all();
         return view('player.create', compact('clubs', 'teams'));
@@ -40,6 +42,8 @@ class PlayerController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create');
+
         Player::create([
             'name' => $request->name,
             'birth_year' => $request->birth_year ?? null,
@@ -71,6 +75,8 @@ class PlayerController extends Controller
      */
     public function edit(Player $player)
     {
+        $this->authorize('edit');
+
         $clubs = Club::all();
         $teams = Team::all();
         return view('player.edit', compact('player', 'clubs', 'teams'));
@@ -85,6 +91,8 @@ class PlayerController extends Controller
      */
     public function update(Request $request, Player $player)
     {
+        $this->authorize('edit');
+
         $player->update([
             'name' => $request->name,
             'birth_year' => $request->birth_year ?? null,
@@ -105,6 +113,8 @@ class PlayerController extends Controller
      */
     public function destroy(Player $player)
     {
+        $this->authorize('delete');
+
         $player->delete();
 
         return redirect()->route('players.index');

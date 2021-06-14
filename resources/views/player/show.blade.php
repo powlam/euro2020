@@ -35,5 +35,7 @@
         <input type="text" name="club" value="@if ($player->club) {{ $player->club->name }} ({{ $player->club->country }}) @endif" readonly/>
     </label>
 
-    <a href="{{ route('players.edit', ['player' => $player]) }}"><x-icon.edit class="inline"/></a>
+    @can('edit')
+        <a href="{{ route('players.edit', ['player' => $player]) }}"><x-icon.edit class="inline"/></a>
+    @endcan
 </x-app-layout>

@@ -53,10 +53,12 @@
         <button type="submit">Save</button>
     </form>
 
-    <form method="post" action="{{ route('players.destroy', ['player' => $player]) }}">
-        @csrf
-        <input name="_method" type="hidden" value="DELETE">
+    @can('delete')
+        <form method="post" action="{{ route('players.destroy', ['player' => $player]) }}">
+            @csrf
+            <input name="_method" type="hidden" value="DELETE">
 
-        <button type="submit">Delete</button>
-    </form>
+            <button type="submit">Delete</button>
+        </form>
+    @endcan
 </x-app-layout>

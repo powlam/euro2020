@@ -25,6 +25,8 @@ class ClubController extends Controller
      */
     public function create()
     {
+        $this->authorize('create');
+
         return view('club.create');
     }
 
@@ -36,6 +38,8 @@ class ClubController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create');
+
         Club::create([
             'name' => $request->name,
             'country' => $request->country ?? null,
@@ -64,6 +68,8 @@ class ClubController extends Controller
      */
     public function edit(Club $club)
     {
+        $this->authorize('edit');
+
         return view('club.edit', compact('club'));
     }
 
@@ -76,6 +82,8 @@ class ClubController extends Controller
      */
     public function update(Request $request, Club $club)
     {
+        $this->authorize('edit');
+
         $club->update([
             'name' => $request->name,
             'country' => $request->country ?? null,
@@ -93,6 +101,8 @@ class ClubController extends Controller
      */
     public function destroy(Club $club)
     {
+        $this->authorize('delete');
+
         $club->delete();
 
         return redirect()->route('clubs.index');

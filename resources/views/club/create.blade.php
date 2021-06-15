@@ -22,6 +22,7 @@
             league
             <input type="text" name="league"/>
         </label>
-        <button type="submit">Save</button>
+
+        <button type="submit" class="block w-28 mt-3 p-2 shadow-md border-b-2 border-teal-500 bg-teal-50 hover:bg-teal-200 rounded-md cursor-pointer text-center text-sm uppercase">{{ __('Save') }}</button>
     </form>
 @endsection

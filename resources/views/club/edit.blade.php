@@ -25,8 +25,8 @@
             <input type="text" name="league" value="{{ $club->league }}"/>
         </label>
 
-        <a href="{{ route('clubs.show', ['club' => $club]) }}">Cancel</a>
-        <button type="submit">Save</button>
+        <button type="submit" class="block w-28 mt-3 p-2 shadow-md border-b-2 border-teal-500 bg-teal-50 hover:bg-teal-200 rounded-md cursor-pointer text-center text-sm uppercase">{{ __('Save') }}</button>
+        <a href="{{ route('clubs.show', ['club' => $club]) }}" class="block w-28 mt-3 p-2 shadow-md border-b-2 border-gray-500 bg-gray-50 hover:bg-gray-200 rounded-md cursor-pointer text-center text-sm uppercase">{{ __('Cancel') }}</a>
     </form>
 
     @can('delete')
@@ -34,7 +34,7 @@
             @csrf
             <input name="_method" type="hidden" value="DELETE">
 
-            <button type="submit">Delete</button>
+            <button type="submit" class="block w-28 mt-6 p-2 shadow-md border-b-2 border-red-500 bg-red-50 hover:bg-red-200 rounded-md cursor-pointer text-center text-sm uppercase">{{ __('Delete') }}</button>
         </form>
     @endcan
 @endsection

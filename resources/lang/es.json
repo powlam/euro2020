@@ -3,5 +3,8 @@
     "Dashboard": "Tablero",
     "Clubs": "Clubes",
     "Players": "Jugadores",
-    "Teams": "Equipos"
+    "Teams": "Equipos",
+    "Cancel": "Cancelar",
+    "Save": "Guardar",
+    "Delete": "Borrar"
 }

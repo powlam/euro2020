@@ -8,21 +8,21 @@
 @endsection
 
 @section('content')
-    <label>
-        name
-        <input type="text" name="name" value="{{ $club->name }}" readonly/>
+    <label class="inline-block w-full">
+        <div class="inline-block w-1/6 text-right">name</div>
+        <input type="text" name="name" value="{{ $club->name }}" disabled class="w-9/12 mb-3 bg-gray-50 border-gray-200 rounded-full text-center"/>
     </label>
-    <label>
-        country
-        <input type="text" name="country" value="{{ $club->country }}" readonly/>
+    <label class="inline-block w-full">
+        <div class="inline-block w-1/6 text-right">country</div>
+        <input type="text" name="country" value="{{ $club->country }}" disabled class="w-1/12 mb-3 bg-gray-50 border-gray-200 rounded-full text-center"/>
     </label>
-    <label>
-        league
-        <input type="text" name="league" value="{{ $club->league }}" readonly/>
+    <label class="inline-block w-full">
+        <div class="inline-block w-1/6 text-right">league</div>
+        <input type="text" name="league" value="{{ $club->league }}" disabled class="w-9/12 mb-3 bg-gray-50 border-gray-200 rounded-full text-center"/>
     </label>
 
     @can('edit')
-        <a href="{{ route('clubs.edit', ['club' => $club]) }}"><x-icon.edit class="inline"/></a>
+        <a href="{{ route('clubs.edit', ['club' => $club]) }}" class="block w-1/6 text-right hover:text-gray-300"><x-icon.edit class="inline"/></a>
     @endcan
 @endsection
 

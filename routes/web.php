@@ -28,9 +28,9 @@ Route::group(['middleware' => 'language'], function () {
         'teams' => TeamController::class,
     ]);
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->middleware(['auth'])->name('dashboard');
+    Route::get('/championship', function () {
+        return view('championship');
+    })->middleware(['auth'])->name('championship');
 
     require __DIR__.'/auth.php';
 

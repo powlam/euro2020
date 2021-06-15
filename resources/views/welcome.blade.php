@@ -17,7 +17,8 @@
             </div>
         @endif
 
-        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 text-center">
+            <img src="{{ asset('images/uefaeuro2020.png') }}" alt="UEFA Euro 2020" class="block h-64 w-auto mb-12" />
             <span class="text-4xl">{{ __('Welcome') }}</span>
         </div>
     </div>

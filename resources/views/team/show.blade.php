@@ -1,10 +1,10 @@
 @extends('team.layout')
 
 @section('this-element')
-    <p>
+    <div class="p-6 bg-{{ $team->color_primary ?? 'white' }} text-{{ $team->color_secondary ?? 'black' }} border-b-4 border-{{ $team->color_terciary ?? 'gray-200' }}">
         <a href="{{ route('teams.index') }}"><x-icon.back class="inline"/></a>
         Team: {{ $team->name }}
-    </p>
+    </div>
 @endsection
 
 @section('content')

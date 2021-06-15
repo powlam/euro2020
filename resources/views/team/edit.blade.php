@@ -1,10 +1,10 @@
 @extends('team.layout')
 
 @section('this-element')
-    <p>
+    <div class="p-6 bg-{{ $team->color_primary ?? 'white' }} text-{{ $team->color_secondary ?? 'black' }} border-b-4 border-{{ $team->color_terciary ?? 'gray-200' }}">
         <a href="{{ route('teams.index') }}"><x-icon.back class="inline"/></a>
         Team: {{ $team->name }}
-    </p>
+    </div>
 @endsection
 
 @section('content')
@@ -28,6 +28,20 @@
                     <option @if ($group === $team->group) selected @endif >{{ $group }}</option>
                 @endforeach
             </select>
+        </label>
+        <br/>
+        <label>
+            color_primary
+            <input type="text" name="color_primary" value="{{ $team->color_primary }}"/>
+            {{-- <span class="inline-block w-8 h-8 align-middle border rounded @if ($team->color_primary) bg-{{ $team->color_primary }} @endif"></span> --}}
+        </label>
+        <label>
+            color_secondary
+            <input type="text" name="color_secondary" value="{{ $team->color_secondary }}"/>
+        </label>
+        <label>
+            color_terciary
+            <input type="text" name="color_terciary" value="{{ $team->color_terciary }}"/>
         </label>
 
         <a href="{{ route('teams.show', ['team' => $team]) }}">Cancel</a>

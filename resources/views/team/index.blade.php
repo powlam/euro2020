@@ -18,7 +18,7 @@
         </thead>
         <tbody>
         @foreach ($teams as $team)
-            <tr class="hover:bg-gray-100">
+            <tr class="hover:bg-{{ $team->color_primary ?? 'gray-200' }} hover:text-{{ $team->color_secondary ?? 'black' }} border-b-2 border-transparent hover:border-{{ $team->color_terciary ?? 'gray-200' }}">
                 <td class='text-left'>{{ $team->name }}</td>
                 <td>{{ $team->country }}</td>
                 <td>{{ $team->group }}</td>

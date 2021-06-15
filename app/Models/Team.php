@@ -25,6 +25,9 @@ class Team extends Model
         'name',
         'country',
         'group',
+        'color_primary',
+        'color_secondary',
+        'color_terciary',
     ];
 
     /** var char[] $groups */

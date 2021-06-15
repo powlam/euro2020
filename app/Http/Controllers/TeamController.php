@@ -44,6 +44,9 @@ class TeamController extends Controller
             'name' => $request->name,
             'country' => $request->country,
             'group' => $request->group ?? null,
+            'color_primary' => $request->color_primary ?? null,
+            'color_secondary' => $request->color_secondary ?? null,
+            'color_terciary' => $request->color_terciary ?? null,
         ]);
 
         return redirect()->route('teams.index');
@@ -88,6 +91,9 @@ class TeamController extends Controller
             'name' => $request->name,
             'country' => $request->country,
             'group' => $request->group ?? null,
+            'color_primary' => $request->color_primary ?? null,
+            'color_secondary' => $request->color_secondary ?? null,
+            'color_terciary' => $request->color_terciary ?? null,
         ]);
 
         return redirect()->route('teams.show', ['team' => $team]);

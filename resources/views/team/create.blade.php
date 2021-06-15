@@ -1,10 +1,10 @@
 @extends('team.layout')
 
 @section('this-element')
-    <p>
+    <div class="p-6 bg-white border-b-4 border-gray-200">
         <a href="{{ route('teams.index') }}"><x-icon.back class="inline"/></a>
         NEW Team
-    </p>
+    </div>
 @endsection
 
 @section('content')

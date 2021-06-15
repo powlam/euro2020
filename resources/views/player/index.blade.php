@@ -2,9 +2,7 @@
 
 @section('content')
     @can('create')
-        <p>
-            <a href="{{ route('players.create') }}"><x-icon.new/></a>
-        </p>
+        <a href="{{ route('players.create') }}" class="block mt-3 p-2 shadow-md border-b-2 border-teal-500 bg-teal-50 hover:bg-teal-200 rounded-md cursor-pointer text-center text-sm"><x-icon.new class="inline-block"/></a>
     @endcan
 
     <table class="container mx-auto my-3 table-fixed text-center">

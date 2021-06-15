@@ -10,34 +10,34 @@
 @section('content')
     <form method="post" action="{{ route('players.store') }}">
         @csrf
-        <label>
-            name
-            <input type="text" name="name"/>
+        <label class="inline-block w-full">
+            <div class="inline-block w-1/6 text-right">name</div>
+            <input type="text" name="name" class="w-9/12 mb-3 border-gray-200 rounded-full text-center"/>
         </label>
-        <label>
-            birth_year
-            <input type="number" min="1970" max="2010" name="birth_year"/>
+        <label class="inline-block w-full">
+            <div class="inline-block w-1/6 text-right">birth_year</div>
+            <input type="number" min="1970" max="2010" name="birth_year" class="w-1/12 mb-3 border-gray-200 rounded-full text-center"/>
         </label>
-        <label>
-            team
-            <select name="team_id">
+        <label class="inline-block w-full">
+            <div class="inline-block w-1/6 text-right">team</div>
+            <select name="team_id" class="w-9/12 mb-3 border-gray-200 rounded-full text-center">
                 <option disabled value="">...</option>
                 @foreach ($teams as $team)
                     <option value="{{ $team->id }}">{{ $team->name }}</option>
                 @endforeach
             </select>
         </label>
-        <label>
-            sheet_name
-            <input type="text" name="sheet_name"/>
+        <label class="inline-block w-full">
+            <div class="inline-block w-1/6 text-right">sheet_name</div>
+            <input type="text" name="sheet_name" class="w-9/12 mb-3 border-gray-200 rounded-full text-center"/>
         </label>
-        <label>
-            sheet_number
-            <input type="number" min="1" max="99" name="sheet_number"/>
+        <label class="inline-block w-full">
+            <div class="inline-block w-1/6 text-right">sheet_number</div>
+            <input type="number" min="1" max="99" name="sheet_number" class="w-1/12 mb-3 border-gray-200 rounded-full text-center"/>
         </label>
-        <label>
-            club
-            <select name="club_id">
+        <label class="inline-block w-full">
+            <div class="inline-block w-1/6 text-right">club</div>
+            <select name="club_id" class="w-9/12 mb-3 border-gray-200 rounded-full text-center">
                 <option disabled value="">...</option>
                 @foreach ($clubs as $club)
                     <option value="{{ $club->id }}">{{ $club->name }} ({{ $club->country }})</option>

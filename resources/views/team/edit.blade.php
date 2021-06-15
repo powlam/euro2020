@@ -29,7 +29,6 @@
                 @endforeach
             </select>
         </label>
-        <br/>
         <label class="inline-block w-full">
             <div class="inline-block w-1/6 text-right">color_primary</div>
             <input type="text" name="color_primary" value="{{ $team->color_primary }}" class="w-5/12 mb-3 border-gray-200 rounded-full text-center"/>
